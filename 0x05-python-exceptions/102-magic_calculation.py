@@ -10,7 +10,9 @@ def magic_calculation(a, b):
                 result += a ** b / i
         except:
             result = a + b
+            break
     return result
 
 
-dis.dis(magic_calculation)
+print(magic_calculation(1, 20))
+# dis.dis(magic_calculation)
