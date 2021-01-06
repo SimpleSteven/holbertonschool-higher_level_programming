@@ -3,11 +3,14 @@
 
 
 def add_integer(a, b=98):
-    ''' Receive as parameters, two numbers, the second
-    is optional. If the second is not given, will be replaced
-    by a 98. Then add the two numbers and cast it to integers'''
+    '''
+    Args: a, b = int or float
+    Raise error if the args aren't int float
+    Cast a and b to int
+    Add a + b and return it
+    '''
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
     elif type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-    return int(a + b)
+    return int(a) + int(b)
