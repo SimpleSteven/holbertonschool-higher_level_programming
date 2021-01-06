@@ -18,12 +18,12 @@ Using "add_integer"
 
     TypeError cases:
 
-    >>> add_integer([], -1)
+    >>> add_integer([1], -1)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
 
-    >>> add_integer(8, "not_a_int")
+    >>> add_integer(8, "not_an_int")
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
@@ -38,22 +38,15 @@ Using "add_integer"
     ...
     TypeError: b must be an integer
 
-    >>> add_integer({"a": 3, "b": 9, "c": -27}, "not_float")
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
-    >>> add_integer([-1, -2, -3], 22)
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
-    >>> add_integer(9, ("a", "b", "c"))
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer
+    >>> add_integer(9)
+    107
 
     >>> add_integer()
     Traceback (most recent call last):
     ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    >>> add_integer(100e+1000, 1)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
