@@ -3,4 +3,4 @@
 
 def print_sorted_dictionary(a_dictionary):
     for key, item in sorted(a_dictionary.items()):
-        print(f"{key}: {item}")
+        print("{}: {}".format(key, item))
