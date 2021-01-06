@@ -1,0 +1,54 @@
+0-add_integer
+======================
+
+Using "add_integer"
+-------------------
+
+    A function that add two integers or floats, as integers.
+    Import the function:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+    Hold Cases:
+
+    Normal case:
+
+    >>> add_integer(1,2)
+    3
+
+    TypeError cases:
+
+    >>> add_integer([], -1)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(8, "not_a_int")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(True, "not_a_int")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(-3, 3+5j)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer({"a": 3, "b": 9, "c": -27}, "not_float")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer([-1, -2, -3], 22)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(9, ("a", "b", "c"))
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
