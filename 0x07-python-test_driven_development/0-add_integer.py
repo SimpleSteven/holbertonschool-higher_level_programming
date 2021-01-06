@@ -1,13 +1,20 @@
 #!/bin/usr/python3
-'''A function that add two numbers integers or floats'''
+'''
+A function that add two numbers integers or floats
+Functions:
+    add_integer()
+'''
 
 
 def add_integer(a, b=98):
     '''
-    Args: a, b = int or float
-    Raise error if the args aren't int float
-    Cast a and b to int
-    Add a + b and return it
+    Args:
+        a: an int or float to add
+        b: an int or float to add
+    Returns:
+        Result of the add of the arguments
+    Raises:
+        TypeError: if a or b aren't int or float
     '''
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
