@@ -1,50 +1,60 @@
-4-print_square
+5-text_indentation
 ======================
 
-Using "print_square"
+Using "text_indentation"
 -------------------
 
-    A function that print square with the character #.
+    A function that print a large string, adding to the '.', ':'
+    and '?' characters, two lines, and removing the extra space after
+    those characters.
     Import the function:
 
-    >>> print_square = __import__('4-print_square').print_square
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
     Hold Cases:
 
     Normal case:
 
-    >>> print_square(2)
-    ##
-    ##
+    >>> text_indentation("He said. What.")
+    He said.
+    <BLANKLINE>
+    What.
+    <BLANKLINE>
+
+    >>> text_indentation("He said")
+    He said
+
+    >>> text_indentation("He said: No!")
+    He said:
+    <BLANKLINE>
+    No!
+
+    >>> text_indentation("")
+
+    >>> text_indentation("A")
+    A
+
+    >>> text_indentation('a')
+    a
 
     TypeError cases:
 
-    >>> print_square()
+    >>> text_indentation()
     Traceback (most recent call last):
     ...
-    TypeError: print_square() missing 1 required positional argument: 'size'
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
 
-    >>> print_square(-1)
+    >>> text_indentation(1)
     Traceback (most recent call last):
     ...
-    ValueError: size must be >= 0
+    TypeError: text must be a string
 
-    >>> print_square("10")
+    >>> text_indentation([1])
     Traceback (most recent call last):
     ...
-    TypeError: size must be an integer
+    TypeError: text must be a string
 
-    >>> print_square([3])
+    >>> text_indentation(False)
     Traceback (most recent call last):
     ...
-    TypeError: size must be an integer
-
-    >>> print_square(None)
-    Traceback (most recent call last):
-    ...
-    TypeError: size must be an integer
-
-    >>> print_square(False)
-    Traceback (most recent call last):
-    ...
-    TypeError: size must be an integer
+    TypeError: text must be a string
