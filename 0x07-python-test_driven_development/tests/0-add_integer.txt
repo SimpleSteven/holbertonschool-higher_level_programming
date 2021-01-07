@@ -51,6 +51,8 @@ Using "add_integer"
     ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
 
+    Overflow cases:
+
     >>> add_integer(100e+1000, 1)
     Traceback (most recent call last):
     ...
