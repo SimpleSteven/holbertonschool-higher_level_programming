@@ -1,0 +1,69 @@
+2-matrix_divided
+======================
+
+Using "add_integer"
+-------------------
+
+    A function that divide a matrix.
+    Import the function:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+    Hold Cases:
+
+    Normal case:
+
+    >>> matrix_divided([[1, 2, 3], [1, 2, 3], [1, 2, 3]], 5)
+    [0.2, 0.4, 0.6, 0.2, 0.4, 0.6, 0.2, 0.4, 0.6]
+
+    Large numbers:
+
+    >>> matrix_divided([[1, 2, 3], [1, 2, 3], [1, 2, 3]], 100e+1000)
+    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    >>> matrix_divided([[1, 2, 100e+1000], [1, 2, 3], [1, 2, 3]], 100e+1000)
+    [0.0, 0.0, nan, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    Empty list case:
+
+    >>> matrix_divided([], 5)
+    []
+
+    TypeError cases:
+
+    >>> matrix_divided([[1, 2, "string"], [1, 2, 3], [1, 2, 3]], 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2, 3], [1, 2, 3], [True, 2, 3]], 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2, 3], [1, 2, [3]], [1, 2, 3]], 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([['a', 2, 3], [1, 2, 3], [1, 2, 3]], 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2, 3], [1, 2, 3], [2, 3]], 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_divided(5)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    Division by zero:
+
+    >>> matrix_divided([[1, 2, 3], [1, 2, 3], [2, 3]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
