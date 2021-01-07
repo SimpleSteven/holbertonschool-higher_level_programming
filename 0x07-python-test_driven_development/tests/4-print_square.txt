@@ -29,7 +29,7 @@ Using "print_square"
     ...
     ValueError: size must be >= 0
 
-    >>> print_square(-15.35)
+    >>> print_square(-15.25)
     Traceback (most recent call last):
     ...
     ValueError: size must be >= 0
