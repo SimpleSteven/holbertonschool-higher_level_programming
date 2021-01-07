@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 '''
 A function that add two numbers integers or floats
 Functions:

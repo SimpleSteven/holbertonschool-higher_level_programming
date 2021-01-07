@@ -1,28 +1,26 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 '''
-    A function that print square with
-    the character #
+    A function that print a large string with
+    2 new lines after these characters: ., ? and :
     Functions:
-        print_square(size)
+        text_indentation(text)
 '''
 
 
-def print_square(size):
+def text_indentation(text):
     '''
     Args:
-        size: an integer to print a square
-        of the character #
+        text: a large string to print
     Raises:
         TypeError:
-        If size isn't an integer, or if it isn't
-        an integer and is less than 0
-        ValueError:
-        If size is less than 0
+        If text isn't a string
     '''
 
-    if type(size) != int:
-        raise TypeError("size must be an integer")
-    elif size < 0:
-        raise ValueError("size must be >= 0")
-    for row in range(size):
-        print("#" * size)
+    if type(text) != str:
+        raise TypeError("text must be a string")
+    for character in [". ", "? ", ": "]:
+        text = text.replace(character, character[0] + "\n\n")
+    print(text)
+
+
+text_indentation("He said: What.")

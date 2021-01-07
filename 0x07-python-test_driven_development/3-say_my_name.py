@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 '''
     A function that print the first
     and last name passed as string parameters
