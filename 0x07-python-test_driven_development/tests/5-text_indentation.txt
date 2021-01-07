@@ -15,16 +15,16 @@ Using "text_indentation"
 
     Normal case:
 
-    >>> text_indentation("He said. What.")
-    He said.
+    >>> text_indentation("  He said    .    What   .    ")
+    He said    .
     <BLANKLINE>
-    What.
+    What   .
     <BLANKLINE>
 
-    >>> text_indentation("He said")
-    He said
+    >>> text_indentation("  He  said")
+    He  said
 
-    >>> text_indentation("He said: No!")
+    >>> text_indentation("    He said:    No!")
     He said:
     <BLANKLINE>
     No!
