@@ -18,9 +18,15 @@ def text_indentation(text):
 
     if type(text) != str:
         raise TypeError("text must be a string")
-    for character in [". ", "? ", ": "]:
-        text = text.replace(character, character[0] + "\n\n")
-    print(text)
-
-
-text_indentation("He said: What.")
+    if 0 == len(text) or 1 == len(text):
+        print(text, end="")
+        return
+    for character in [".", "?", ":"]:
+        text = text.replace(character, character + "\n")
+    str_list = text.split("\n")
+    text = ""
+    for string in str_list:
+        text += string.strip()
+    for character in [".", "?", ":"]:
+        text = text.replace(character, character + "\n\n")
+    print(text, end="")
