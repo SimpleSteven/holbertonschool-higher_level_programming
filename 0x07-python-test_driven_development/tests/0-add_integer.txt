@@ -7,6 +7,7 @@ Using "add_integer"
     A function that add two integers or floats, as integers.
     Import the function:
 
+    >>> import os
     >>> add_integer = __import__('0-add_integer').add_integer
 
     Hold Cases:
@@ -57,3 +58,15 @@ Using "add_integer"
     Traceback (most recent call last):
     ...
     OverflowError: cannot convert float infinity to integer
+
+    ValueError cases:
+
+    >>> add_integer(1, float("NaN"))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(1, 2, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given

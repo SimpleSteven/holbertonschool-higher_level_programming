@@ -24,6 +24,9 @@ Using "add_integer"
     >>> matrix_divided([[1, 2, 100e+1000], [1, 2, 3], [1, 2, 3]], 100e+1000)
     [0.0, 0.0, nan, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
+    >>> matrix_divided([[1, 2, 3], [1, 2, 3], [1, 2, float("NaN")]], 5)
+    [0.2, 0.4, 0.6, 0.2, 0.4, 0.6, 0.2, 0.4, nan]
+
     Empty list case:
 
     >>> matrix_divided([], 5)
@@ -67,3 +70,8 @@ Using "add_integer"
     Traceback (most recent call last):
     ...
     ZeroDivisionError: division by zero
+
+    More arguments than required:
+
+    >>> matrix_divided([[1, 2, 3], [1, 2, 3], [1, 2, float("NaN")]], 5, 9)
+    TypeError: matrix_divided() takes 2 positional arguments but 3 were given
