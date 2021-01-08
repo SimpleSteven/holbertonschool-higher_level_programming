@@ -15,13 +15,15 @@ class TestMaxInteger(unittest.TestCase):
         self.assertAlmostEqual(max_integer([-1.99, 2.89, -100e+1000, 3.8998]), 3.8998)
         self.assertAlmostEqual(max_integer([-1.99, 2.89, 100e+1000, 3.8998]), 100e+1000)
         self.assertAlmostEqual(max_integer(["a", "b", "c"]), "c")
+        self.assertAlmostEqual(max_integer(["abc", "bcd", "cef"]), "cef")
         self.assertAlmostEqual(max_integer("aaeeiioouu"), "u")
         self.assertAlmostEqual(max_integer(), None)
 
-    def test_non_numbers(self):
+    def test_TypeError(self):
         '''Raise an error, is the list, doesn't contain
         just numbers'''
         self.assertRaises(TypeError, max_integer, [True, "2", "3"])
         self.assertRaises(TypeError, max_integer, True)
         self.assertRaises(TypeError, max_integer, [1, 2], [1, 2])
         self.assertRaises(TypeError, max_integer, [1, 2, "hol", "berton"])
+        self.assertRaises(TypeError, max_integer, [-1.99, 1+3j, 100e+1000, 3.8998])
