@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def magic_string():
-    current = 0
-    return f"{'Holberton, ' * (i - 1)}Holberton"
+def magic_string(strings=[]):
+    strings.append("Holberton")
+    return ", ".join(strings)
