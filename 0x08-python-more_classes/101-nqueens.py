@@ -13,7 +13,11 @@ try:
 except (TypeError, ValueError) as err:
     print(err)
     exit(1)
-for tried in range(chess):
-    pos = [[a, b] for a in range(chess) for b in range(chess)]
-    for attemp in
-print(pos)
+
+if chess > 3:
+    plays = []
+    for tries in range(chess - 1):
+        y = -1
+        for x in range(chess):
+            plays.append([x, y])
+print(plays)
