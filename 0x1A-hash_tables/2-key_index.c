@@ -1,10 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * key_index - create a hash table of a given size
- * @key: the size of the new hash table
- * @size: the size of the new hash table
- * Return: a pointer to the newly created hash table
+ * key_index - a function that gives you the index of a key
+ * @key: the string key to obtain the index
+ * @size: the size of the hash table
+ * Return: the index
  */
 
 
