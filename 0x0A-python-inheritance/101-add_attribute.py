@@ -6,7 +6,6 @@ def add_attribute(a_class, name, value):
     '''Create a function that add a new attribute to a class. If fail,
     raise an error with a customized message.'''
 
-    try:
-        setattr(a_class, name, value)
-    except AttributeError:
+    if type(a_class).__module__ == 'builtins':
         raise TypeError("can't add new attribute")
+    setattr(a_class, name, value)
