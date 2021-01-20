@@ -21,3 +21,62 @@ Add negative numbers:
     >>> my_list.append(-5)
     >>> my_list.print_sorted()
     [-40, -5, 1, 30]
+
+Strings:
+
+    >>> my_list = MyList()
+    >>> my_list.append('Hi')
+    >>> my_list.append('Carl')
+    >>> my_list.print_sorted()
+    ['Carl', 'Hi']
+
+Numbers and strings:
+
+    >>> my_list = MyList()
+    >>> my_list.append(15)
+    >>> my_list.append('Carl')
+    >>> my_list.append(11)
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    ...
+    TypeError: '<' not supported between instances of 'str' and 'int'
+
+Booleans:
+
+    >>> my_list = MyList()
+    >>> my_list.append(False)
+    >>> my_list.append(True)
+    >>> my_list.append(True)
+    >>> my_list.print_sorted()
+    [False, True, True]
+
+Data structures:
+
+    >>> my_list = MyList()
+    >>> my_list.append([1, 2, 3])
+    >>> my_list.append([2, 3, 4])
+    >>> my_list.append([-1, 9, 8])
+    >>> my_list.print_sorted()
+    [[-1, 9, 8], [1, 2, 3], [2, 3, 4]]
+
+    >>> my_list = MyList()
+    >>> my_list.append('a')
+    >>> my_list.append([2, 'b', 4])
+    >>> my_list.append([-1, 9, 'c'])
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    ...
+    TypeError: '<' not supported between instances of 'list' and 'str'
+
+
+One non data structure object:
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.print_sorted()
+    [1]
+
+    >>> my_list = MyList()
+    >>> my_list.append('a')
+    >>> my_list.print_sorted()
+    ['a']
