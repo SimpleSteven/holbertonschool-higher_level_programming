@@ -12,7 +12,7 @@ Normal cases:
 
     >>> bg.integer_validator("Susano", 14)
 
-    >>> bg.integer_validator("1", 1)
+    >>> bg.integer_validator("1", (1))
 
     >>> bg.integer_validator("", 10)
 
@@ -28,7 +28,13 @@ No arguments:
     Traceback (most recent call last):
     TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-Age is float:
+Age is a string:
+
+    >>> bg.integer_validator('age', '10')
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Age is a float:
 
     >>> bg.integer_validator('age', 2.3)
     Traceback (most recent call last):
@@ -40,19 +46,37 @@ Age is None:
     Traceback (most recent call last):
     TypeError: age must be an integer
 
-Age is boolean:
+Age is a boolean:
 
     >>> bg.integer_validator('age', False)
     Traceback (most recent call last):
     TypeError: age must be an integer
 
-Age is list:
+Age is a list:
 
     >>> bg.integer_validator('age', [1, 2])
     Traceback (most recent call last):
     TypeError: age must be an integer
 
-Age smaller than 0:
+Age is a tuple:
+
+    >>> bg.integer_validator('age', (5, 10))
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Age is a set:
+
+    >>> bg.integer_validator('age', {10})
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Age is a dictionary:
+
+    >>> bg.integer_validator('age', {10:10})
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Age is smaller than 0:
 
     >>> bg.integer_validator('name', -1)
     Traceback (most recent call last):
