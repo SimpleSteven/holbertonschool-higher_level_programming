@@ -4,14 +4,6 @@ Edge cases for task 7-base_geometry
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Documentation:
-
-    >>> __import__('7-base_geometry').__doc__ != None
-    True
-
-     >>> BaseGeometry.__doc__ != None
-     True
-
     >>> bg = BaseGeometry()
 
 Cases:
@@ -28,15 +20,39 @@ No arguments:
     Traceback (most recent call last):
     TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-Age not integer:
+Age is float:
 
-    >>> bg.integer_validator('age', float(2))
+    >>> bg.integer_validator('age', 2.3)
     Traceback (most recent call last):
     TypeError: age must be an integer
 
-Name smaller than 0:
+Age is None:
+
+    >>> bg.integer_validator('age', None)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Age is boolean:
+
+    >>> bg.integer_validator('age', False)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Age is list:
+
+    >>> bg.integer_validator('age', [1, 2])
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Age smaller than 0:
 
     >>> bg.integer_validator('name', -1)
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
+
+Age is 0:
+
+    >>> bg.integer_validator('name', 0)
     Traceback (most recent call last):
     ValueError: name must be greater than 0
 
