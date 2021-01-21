@@ -12,4 +12,5 @@ def class_to_json(obj):
     attr_dict = {}
     for attr in public_attr:
         attr_dict.update({attr: getattr(obj, attr)})
-    return attr_dict
+    attr_dict = json.dumps(attr_dict)
+    return json.loads(attr_dict)
