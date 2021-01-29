@@ -7,3 +7,10 @@ class MyList(list):
 
     def print_sorted(self):
         print(sorted(self))
+
+
+# my_list = MyList()
+# my_list.append('a')
+# my_list.append([2, 'b', 4])
+# my_list.append([-1, 9, 'c'])
+# my_list.print_sorted()

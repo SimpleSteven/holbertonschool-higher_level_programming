@@ -14,10 +14,9 @@ except (TypeError, ValueError) as err:
     print(err)
     exit(1)
 
-if chess > 3:
-    plays = []
-    for tries in range(chess - 1):
-        y = -1
-        for x in range(chess):
-            plays.append([x, y])
+plays = []
+for tries in range(chess - 1):
+    y = -1
+    for x in range(chess):
+        plays.append([x, y])
 print(plays)

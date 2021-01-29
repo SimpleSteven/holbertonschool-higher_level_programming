@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!def class_to_json(obj):/usr/bin/python3
 '''Write a function that writes an Object to a
 text file, using a JSON representation'''
 import json
