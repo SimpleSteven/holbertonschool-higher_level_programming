@@ -1,21 +1,26 @@
 #!/usr/bin/python3
-''' **** A new class Rectangle, that ****
-    **** inherits from id **** '''
+''' A new class Rectangle, that
+    inherits from Base '''
 from base import Base
 
 
 class Rectangle(Base):
-    ''' **** The Rectangle Class        ****
-        **** Attributes:                ****
-        **** width, height, y, x and id **** '''
+    ''' The Rectangle Class '''
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        ''' **** Constructor of the Rectangle ****'''
-        super().__init__(id)
+        ''' Constructor of the Rectangle class
+            Args:
+                width: the width of the rectangle
+                height: the height of the rectangle
+                y: the y variable
+                x: the x variable
+                id: the id of the instance
+        '''
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -29,6 +34,8 @@ class Rectangle(Base):
             **** instance attribute width **** '''
         if type(width) != int:
             raise TypeError("width must be an integer")
+        if width < 1:
+            raise ValueError("width must be > 0")
         self.__width = width
 
     @property
@@ -43,6 +50,8 @@ class Rectangle(Base):
             **** instance attribute height **** '''
         if type(height) != int:
             raise TypeError("height must be an integer")
+        if height < 1:
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @property
@@ -57,6 +66,8 @@ class Rectangle(Base):
             **** instance attribute x **** '''
         if type(x) != int:
             raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
 
     @property
@@ -71,4 +82,6 @@ class Rectangle(Base):
             **** instance attribute y **** '''
         if type(y) != int:
             raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y
