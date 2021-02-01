@@ -27,10 +27,6 @@ class Rectangle(Base):
         print('\n' * self.y + (' ' * self.x + "#" * self.width + '\n') *
               self.height, end='')
 
-    def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
-                                                       self.width, self.height)
-
     def area(self):
         '''The area of the rectangle
             is width by height'''
@@ -56,6 +52,15 @@ class Rectangle(Base):
                 self.__y = args[4]
             except IndexError:
                 pass
+
+    def to_dictionary(self):
+        attr = ['x', 'y', 'id', 'height', 'width']
+        new_dict = {key: getattr(self, key) for key in attr}
+        return new_dict
+
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
 
     @property
     def width(self):
