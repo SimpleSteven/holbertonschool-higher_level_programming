@@ -26,6 +26,10 @@ class Rectangle(Base):
             with the "#" character '''
         print(("#" * self.width + '\n') * self.height, end='')
 
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
+
     def area(self):
         '''The area of the rectangle
             is width by height'''
