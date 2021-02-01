@@ -21,6 +21,11 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def display(self):
+        ''' Print in stdout the rectangle
+            with the "#" character '''
+        print(("#" * self.width + '\n') * self.height, end='')
+
     def area(self):
         '''The area of the rectangle
             is width by height'''
