@@ -17,6 +17,26 @@ class Square(Rectangle):
         super().__init__(width=size, height=size, x=x, y=y, id=id)
         self.size = size
 
+    def update(self, *args, **kwargs):
+        ''' Function that update the value of
+            the instance attributes '''
+        if len(args) == 0:
+            keys = kwargs.keys()
+            for key in keys:
+                try:
+                    getattr(self, key)
+                except AttributeError:
+                    continue
+                setattr(self, key, kwargs.get(key))
+        else:
+            try:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except IndexError:
+                pass
+
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.height)
