@@ -37,6 +37,13 @@ class Square(Rectangle):
             except IndexError:
                 pass
 
+    def to_dictionary(self):
+        ''' A function that retrieve
+            some attributes in a dictionary '''
+        attr = ['id', 'x', 'size', 'y']
+        new_dict = {key: getattr(self, key) for key in attr}
+        return new_dict
+
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.height)
