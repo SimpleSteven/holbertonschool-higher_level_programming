@@ -2,6 +2,7 @@
 ''' **** A new class Base, that ****
     **** handles the ids of the   ****
     **** objects               **** '''
+import json
 
 
 class Base:
@@ -15,19 +16,11 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
-#
-#
-# b1 = Base()
-# print(b1.id)
-#
-# b2 = Base()
-# print(b2.id)
-#
-# b3 = Base()
-# print(b3.id)
-#
-# b4 = Base(12)
-# print(b4.id)
-#
-# b5 = Base()
-# print(b5.id)
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        ''' Function that returns the JSON string
+            representation of list_dictionaries '''
+        if list_dictionaries is None:
+            return []
+        return json.dumps(list_dictionaries)
