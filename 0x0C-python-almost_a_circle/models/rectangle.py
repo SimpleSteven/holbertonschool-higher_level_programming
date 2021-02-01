@@ -54,6 +54,8 @@ class Rectangle(Base):
                 pass
 
     def to_dictionary(self):
+        ''' A function to_dictionary that retrieve
+            some attributes in a dictionary '''
         attr = ['x', 'y', 'id', 'height', 'width']
         new_dict = {key: getattr(self, key) for key in attr}
         return new_dict
