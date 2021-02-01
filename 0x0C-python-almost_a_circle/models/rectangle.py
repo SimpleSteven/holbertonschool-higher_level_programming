@@ -42,7 +42,11 @@ class Rectangle(Base):
         if len(args) == 0:
             keys = kwargs.keys()
             for key in keys:
-                setattr(Rectangle, key, kwargs.get(key))
+                try:
+                    getattr(self, key)
+                except AttributeError:
+                    continue
+                setattr(self, key, kwargs.get(key))
         else:
             try:
                 self.id = args[0]
