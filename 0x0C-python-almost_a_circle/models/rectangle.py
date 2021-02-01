@@ -36,17 +36,26 @@ class Rectangle(Base):
             is width by height'''
         return self.width * self.height
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         ''' Function that update the value of
             the instance attributes '''
-        try:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
-        except IndexError:
-            pass
+        if len(args) == 0:
+            keys = kwargs.keys()
+            for key in keys:
+                try:
+                    getattr(Rectangle, key)
+                except AttributeError:
+                    continue
+                setattr(Rectangle, key, kwargs.get(key))
+        else:
+            try:
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+                self.__x = args[3]
+                self.__y = args[4]
+            except IndexError:
+                pass
 
     @property
     def width(self):
