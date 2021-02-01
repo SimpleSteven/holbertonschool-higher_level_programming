@@ -24,8 +24,8 @@ class Rectangle(Base):
     def display(self):
         ''' Print in stdout the rectangle
             with the "#" character '''
-        print('\n' * self.y + (' ' * self.x + "#" * self.width + '\n')
-              * self.height, end='')
+        print('\n' * self.y + (' ' * self.x + "#" * self.width + '\n') *
+              self.height, end='')
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
