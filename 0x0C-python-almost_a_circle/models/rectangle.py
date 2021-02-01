@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 ''' A new class Rectangle, that
     inherits from Base '''
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -68,3 +68,14 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 2)
+    print(r1.id)
+
+    r2 = Rectangle(2, 10)
+    print(r2.id)
+
+    r3 = Rectangle(10, 2, 0, 0, 12)
+    print(r3.id)
