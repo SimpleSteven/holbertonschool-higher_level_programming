@@ -36,6 +36,18 @@ class Rectangle(Base):
             is width by height'''
         return self.width * self.height
 
+    def update(self, *args):
+        ''' Function that update the value of
+            the instance attributes '''
+        try:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+            self.__y = args[4]
+        except IndexError:
+            pass
+
     @property
     def width(self):
         return self.__width
