@@ -57,8 +57,7 @@ class Rectangle(Base):
         ''' A function that retrieve
             some attributes in a dictionary '''
         attr = ['x', 'y', 'id', 'height', 'width']
-        new_dict = {key: getattr(self, key) for key in attr}
-        return new_dict
+        return {key: getattr(self, key) for key in attr}
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,

@@ -41,8 +41,7 @@ class Square(Rectangle):
         ''' A function that retrieve
             some attributes in a dictionary '''
         attr = ['id', 'x', 'size', 'y']
-        new_dict = {key: getattr(self, key) for key in attr}
-        return new_dict
+        return {key: getattr(self, key) for key in attr}
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
